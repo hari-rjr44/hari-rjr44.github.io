@@ -1,18 +1,17 @@
 body{
-    background-color: rgb(32, 32, 32);
+    background-color: rgb(27, 27, 27);
 }
 .menubar{
     text-align: right;
-
-}
-.name{
-    color: aqua;
-    text-align: left;
-    font-size: 30px;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+    position: sticky;
+    top: 0;
 }
 .menubar ul{
     list-style: none;
-    background: #f0e006;
+    background: #4760ee;
     padding: 0;
     
 }
@@ -22,15 +21,52 @@ body{
 .menubar a{
     text-decoration: none;
     width:  px;
-    color:#f0e006;
+    color:#ffffff;
     display: block;
     padding: 25px 20px;
-    font-size: 25px;
+    font-size: 24px;
     text-align: center;
+    font-family: Arial;
     
 }
 .menubar a:hover{
-    background: #f0e006;
-    color: black;
+    background: #4760ee;
+    color: white;
+}
+.navbar{
+    color: #4760ee;
+}
+.navbar{
+    font-size: 50px;
+}
+hr{
+    color: #f0e006;
+    position: sticky;
+    top: 80px;
+}
+h2{
+    font-size: 50px;
+}
+#home{
+    padding: 40px;
+    color: #ffffff;
+}
+#projects{
+    padding: 40px;
+    color: #ffffff;
+}
+#timeline{
+    padding: 40px;
+    color: #ffffff;
+}
+#about{
+    padding: 40px;
+    color: #ffffff;
+}
+#contact{
+    padding: 40px;
+    color: #ffffff;
 }
 
+   
+   
