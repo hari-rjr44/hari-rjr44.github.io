@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Hari Govind</title>
     <link rel="stylesheet"  href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
@@ -116,16 +116,41 @@
     </section>
 
     <section id="contact-section">
-        <form class="contact-form">
-            <input type="text" name="name" id="name" autocomplete="off" placeholder="name">
-            <input type="email" name="email" id="email" autocomplete="off" placeholder="email">
-            <textarea name="msg" id="msg" placeholder="message" autocomplete="off"></textarea>
-            <button type="submit" class="form-submit-btn">contact</button>
+        <form class="contact-form" id="submit-form">
+            <input type="text" name="name" id="name" autocomplete="off" placeholder="Name">
+            <input type="email" name="email" id="email" autocomplete="off" placeholder="E-mail">
+            <textarea name="msg" id="msg" placeholder="Message" autocomplete="off"></textarea>
+            <button type="Submit" class="form-submit-btn">contact</button>
         </form>
         <div class="map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31436.670024979925!2d76.29518276973629!3d9.968547143846784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0872d782befefb%3A0x4175325de985fc4b!2sVyttila%2C%20Kochi%2C%20Kerala!5e0!3m2!1sen!2sin!4v1680052622253!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
-    </section>    
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+      $("#submit-form").submit((e) => {
+        e.preventDefault();
+        $.ajax({
+          url: "https://script.google.com/macros/s/AKfycbxedKgLN34LH4jMj4oRRYCO7YRrEX5ZP3ZaC1n23R7_nraIfnt7a5-g13lVwCj3Y4Xphg/exec",
+          data: $("#submit-form").serialize(),
+          method: "post",
+          success: function (response) {
+            document.getElementById("submit-form").reset();
+            document.getElementById("outputMessage").classList.add("success");
+            document.getElementById("outputMessage").innerHTML =
+              "Message Send Successfully";
+            return false;
+          },
+          error: function (err) {
+            document.getElementById("outputMessage").classList.add("fail");
+            document.getElementById("outputMessage").innerHTML =
+              "Our Server is busy right now. Try again later!";
+            return false;
+          },
+        });
+      });
+    </script>
 
 </body>
 
